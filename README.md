@@ -7,5 +7,6 @@
 ✔️ Toda a parte lógica foi desenvolvida com Go;
 
 🌱 Playlist base e créditos dos exercícios: https://www.youtube.com/watch?v=WiGU_ZB-u0w&list=PLCKpcjBB_VlBsxJ9IseNxFllf-UFEXOdg
+
 🌱 Documentação go: https://go.dev/doc/effective_go
 
