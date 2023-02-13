@@ -49,6 +49,7 @@ func main() {
 
 	*/
 	loops_condicionais()
+	agrupamento_de_dados()
 
 }
 
@@ -94,10 +95,69 @@ func loops_condicionais() {
 		fmt.Println("O número é igual a 5")
 	case z <= 5:
 		fmt.Println("o número é menor que 5")
-	default: fmt.Println("o número não é igual a 5 e nem menor que 5")
+	default:
+		fmt.Println("o número não é igual a 5 e nem menor que 5")
+	}
+}
+
+func agrupamento_de_dados() {
+
+	var x [4]int
+
+	/* Agrupamento de dados
+	Array
+		-Arrays são agrupamentos de dados com índices próprios
+		-x[4] quer dizer que o o array possui 4 valores, começando do índice 0 até o 3, (0,1,2,3), ou seja, 4 valores contando com o 0
+		-O método len pode ser utilizado para descobrir quantos valores o array tem
+		-Não é possível mudar o tamanho do array
+	*/
+
+	fmt.Println(len(x))
+
+	y := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(y)
+
+	/* Agrupamento de dados
+	Slice
+		-Diferente do array que é criado com um número definido de valores, o slice não precisa ter essa informação
+		-É possível mudar o tamanho do slice
+		-A função range percorre o slice inteiro
+	*/
+
+	z := []int{1, 2, 3, 4, 5}
+	fmt.Println(z)
+
+	frutas := []string{"Maça", "Banana", "Laranja", "Melancia"}
+
+	for i, range_frutas := range frutas {
+		fmt.Println("A fruta da posição", i, "é:", range_frutas)
 	}
 
 	/* Agrupamento de dados
-	
+	Slice
+		-Para pegar de um determinado índice até outro:
 	*/
+
+	pizzas := []string{"Mussarela", "Abacaxi", "Quatro queijos", "Moda"}
+	fmt.Println(pizzas[1:4])
+
+	/* Agrupamento de dados
+	Slice
+		-Para anexar a uma slice, utiliza-se o append
+		-Se precisar anexar uma slice a outra, precisa utilizar o operador "...", para que cada item da slice seja integrado 
+	*/
+
+	numeros := []int{1, 2, 3, 4}
+
+	numeros = append(numeros, 10, 11, 12)
+
+	fmt.Println(numeros)
+
+	slice_1 := []int{10,20,30,30}
+	slice_2:= []int{1,2,3,4}
+	slice_3 := append(slice_1, slice_2...)
+
+	fmt.Println(slice_3)
+
+
 }
