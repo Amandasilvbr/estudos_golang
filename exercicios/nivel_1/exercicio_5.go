@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+type meu_tipo int
+var y int
+var x meu_tipo
 
 func main() {
 
@@ -24,4 +27,10 @@ func main() {
             3. Demonstre o tipo de "y"
 	*/
 
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
+	x = 42
+	fmt.Println(x)
+	y= int(x)
+	fmt.Printf("%T\n", y)
 }
