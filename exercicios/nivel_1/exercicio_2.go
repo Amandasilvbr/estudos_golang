@@ -20,10 +20,10 @@ func main(){
 		2- y será string
 		3- z será bool
 
-		Depois, demonstre os valores de cada identificador. 
+		Depois, demonstre os valores de cada identificador
 		O compilador atribuiu valores para estas variáveis. Como esses valores se chamam?
 
-		Resposta: são valores 0, pois as variáveis não foram iniciadas 
+		Resposta: são valores 0, pois as variáveis não foram iniciadas antes
 
 	*/
 

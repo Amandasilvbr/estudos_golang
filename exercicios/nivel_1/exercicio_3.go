@@ -14,7 +14,7 @@ func main() {
 
 	/*
 				- Utilizando a solução do exercício anterior:
-		    	1- Em package-level scope, atribua os seguintes valores às variáveis:
+		    	1- Em package-level scope, atribua os seguintes valores às variáveis a seguir:
 		        	-Para "x" atribua 42
 		        	-Para "y" atribua "James Bond"
 		        	-Para "z" atribua true
