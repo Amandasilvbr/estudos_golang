@@ -159,5 +159,26 @@ func agrupamento_de_dados() {
 
 	fmt.Println(slice_3)
 
+	
+	/* Agrupamento de dados
+	Slice- Make
+		-O make cria uma slice de x elementos, porém com capacidade de y elementos, assim como no exemplo abaixo. N = 5, Capacidade = 10 
+		-Melhor para a performance do código
+		-Uma slice multidimensional é uma slice que contém outro slice dentro slice_1[x][y]
+	*/
 
+	slice_4 := make([]string, 5, 10)
+	slice_4[0], slice_4[1] = "oi","tchau"
+	fmt.Println(slice_4)
+
+	/* Agrupamento de dados
+	Slice- Maps
+		-O make cria uma slice de x elementos, porém com capacidade de y elementos, assim como no exemplo abaixo. N = 5, Capacidade = 10 
+		-Melhor para a performance do código
+		-Uma slice multidimensional é uma slice que contém outro slice dentro slice_1[x][y]
+	*/
+
+	produto := map[string]int{"Calça": 50, "Camisa": 40}
+	fmt.Println(produto)
+	fmt.Println(produto["Calça"])
 }
