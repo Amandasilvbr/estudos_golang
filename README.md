@@ -1,6 +1,6 @@
 <h1>Olá! Esse projeto é para estudos na linguagem Go</h1>
 
-✔️ No arquivo main.go foram feitos comentários sobre os pontos básicos da linguagem;
+✔️ No arquivo main.go foram feitos comentários sobre os pontos básicos da linguagem e seus tópicos;
 
 ✔️ Os exercícios trabalham tipos de dados, loops, funções entre outros;
 

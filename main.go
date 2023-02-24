@@ -144,7 +144,7 @@ func agrupamento_de_dados() {
 	/* Agrupamento de dados
 	Slice
 		-Para anexar a uma slice, utiliza-se o append
-		-Se precisar anexar uma slice a outra, precisa utilizar o operador "...", para que cada item da slice seja integrado 
+		-Se precisar anexar uma slice a outra, precisa utilizar o operador "...", para que cada item da slice seja integrado
 	*/
 
 	numeros := []int{1, 2, 3, 4}
@@ -153,32 +153,120 @@ func agrupamento_de_dados() {
 
 	fmt.Println(numeros)
 
-	slice_1 := []int{10,20,30,30}
-	slice_2:= []int{1,2,3,4}
+	slice_1 := []int{10, 20, 30, 30}
+	slice_2 := []int{1, 2, 3, 4}
 	slice_3 := append(slice_1, slice_2...)
 
 	fmt.Println(slice_3)
 
-	
 	/* Agrupamento de dados
 	Slice- Make
-		-O make cria uma slice de x elementos, porém com capacidade de y elementos, assim como no exemplo abaixo. N = 5, Capacidade = 10 
+		-O make cria uma slice de x elementos, porém com capacidade de y elementos, assim como no exemplo abaixo. N = 5, Capacidade = 10
 		-Melhor para a performance do código
 		-Uma slice multidimensional é uma slice que contém outro slice dentro slice_1[x][y]
 	*/
 
 	slice_4 := make([]string, 5, 10)
-	slice_4[0], slice_4[1] = "oi","tchau"
+	slice_4[0], slice_4[1] = "oi", "tchau"
 	fmt.Println(slice_4)
 
 	/* Agrupamento de dados
 	Slice- Maps
-		-O make cria uma slice de x elementos, porém com capacidade de y elementos, assim como no exemplo abaixo. N = 5, Capacidade = 10 
-		-Melhor para a performance do código
-		-Uma slice multidimensional é uma slice que contém outro slice dentro slice_1[x][y]
+		-Map recebe dois tipos, e os relaciona
+		-map[string]int{...} = uma string sendo relacionada a um número inteiro
 	*/
 
 	produto := map[string]int{"Calça": 50, "Camisa": 40}
 	fmt.Println(produto)
 	fmt.Println(produto["Calça"])
+
+	/* Struct
+	-Permite o armazenamento de tipos diferentes
+	*/
+
+	type cliente struct {
+		nome      string
+		sobrenome string
+		fumante   bool
+	}
+
+	cliente_1 := cliente{
+		nome:      "João",
+		sobrenome: "da Silva",
+		fumante:   false,
+	}
+
+	// ou
+
+	cliente_2 := cliente{"Joana", "Pereira", true}
+
+	fmt.Println(cliente_1, cliente_2)
+
+	/* Struct
+	-Struct embutido: struct dentro de outro
+	*/
+
+	type aa struct {
+		pessoa_1 string
+		pessoa_2 string
+	}
+
+	primeiro_cliente := aa{
+		pessoa_1: cliente_1.nome,
+		pessoa_2: cliente_2.sobrenome,
+	}
+
+	fmt.Println(primeiro_cliente)
+
+	// Struct anônimo, mesmo que struct comum mas sem tipagem definida e sem reutilização
+
+	/* Funções
+		-Criaão fora do main, chamada dentro
+	 */
+
+	subt()
+	
+	som(2)
+
+	variadica()
+
+	slicex := []int{1,2,3,4}
+
+	fmt.Println(uso_slice(slicex...))
+	
+}
+
+// Func sem retorno
+
+func subt() {
+	num1, num2 := 0,0 
+	fmt.Println("Primeiro número")
+	fmt.Scanln(&num1)
+	fmt.Println("Segundo número")
+	fmt.Scanln(&num2)
+	fmt.Println(num1 - num2)
+}
+
+// Func com retorno
+func som(num1 int) (int){
+	multiplicacao := num1 * 2
+	fmt.Println(multiplicacao)
+	return multiplicacao
+
+}
+
+// Func com parâmetro variádico/ Aceita 0, null, sem obrigatoriedade de passar um argumento mesmo tendo parâmetros
+func variadica(x ...int){
+	fmt.Println(x)
+	fmt.Println("O valor de x é", x)
+}
+
+// Func com slice
+
+func uso_slice(slice1...int) int{
+	resultado := 0
+	for _, i:= range slice1 {
+		resultado += i
+	}
+	return resultado
 }
